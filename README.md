@@ -39,3 +39,63 @@ A full-stack house booking application built with React, Node.js, Express, and M
 ```bash
 git clone https://github.com/yourusername/House-Booking.git
 cd House-Booking
+```
+
+Set up environment variables
+Create a .env file in the root directory with the following variables:
+
+plaintext
+```bash
+NODE_ENV=developmentPORT=5000MONGODB_URI=your_mongodb_connection_stringJWT_SECRET=your_jwt_secret
+
+```
+Create a .env file in the client directory with:
+
+plaintext
+```bash
+REACT_APP_API_URL=http://localhost:5000/api
+```
+
+### Install dependencies and run the application
+
+```bash
+# Install backend dependencies
+npm install
+
+# Install frontend dependencies
+cd client
+npm install
+
+# Run backend and frontend concurrently (from root directory)
+cd ..
+npm run dev
+```
+
+### Seed the database (optional)
+To populate the database with sample data:
+
+bash
+```bash
+
+node seeder.js -i
+```
+This will create a sample admin user and properties.
+
+## Project Structure
+
+```bash
+├── client/                 # Frontend React application
+│   ├── public/             # Static files
+│   └── src/                # React source code
+│       ├── components/     # Reusable components
+│       ├── context/        # Context providers
+│       ├── pages/          # Page components
+│       ├── services/       # API services
+│       └── types/          # TypeScript type definitions
+├── config/                 # Backend configuration
+├── controllers/            # Route controllers
+├── middleware/             # Express middleware
+├── models/                 # Mongoose models
+├── routes/                 # API routes
+└── utils/                  # Utility functions
+```
